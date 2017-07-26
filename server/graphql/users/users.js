@@ -2,16 +2,15 @@ import {
   GraphQLList,
   GraphQLNonNull,
 } from 'graphql';
-
 import { internet, random } from 'faker';
+import isEmail from 'validator/lib/isEmail';
 
 import {
   UserType,
   UserInputType,
 } from './usersTypes';
 
-
-export const userQueries = {
+const userQueries = {
   users: {
     type: new GraphQLList(UserType),
     resolve: async () => {
@@ -27,23 +26,30 @@ export const userQueries = {
   },
 };
 
-
-export const userMutations = {
+const userMutations = {
   createUser: {
     type: UserType,
     args: {
-      userPayload: {
+      input: {
         type: new GraphQLNonNull(UserInputType),
       },
     },
-    resolve: async (rootValue, { userPayload }) => {
+    resolve: async (rootValue, { input }) => {
+      if (!isEmail(input.email)) {
+        throw new Error('Email is not in valid format');
+      }
       const result = await new Promise((resolve) => {
         setTimeout(() =>
-          resolve(Object.assign(userPayload, {
+          resolve(Object.assign(input, {
             id: random.uuid(),
           })), 100);
       });
       return result;
     },
   },
+};
+
+export {
+  userQueries,
+  userMutations,
 };

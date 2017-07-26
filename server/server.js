@@ -12,7 +12,7 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.use('/', (req, res) => {
-  res.json('Go to /graphql to test your queries and mutations :)');
+  res.json('Go to /graphql to test your queries and mutations!');
 });
 
 const server = app.listen(3000, () => {

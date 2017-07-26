@@ -20,7 +20,8 @@
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
     "faker": "^4.1.0",
-    "graphql": "^0.10.3"
+    "graphql": "^0.10.3",
+    "validator": "^8.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
