@@ -1,35 +1,35 @@
 import {
   GraphQLString,
   GraphQLID,
-  GraphQLInputObjectType,
   GraphQLObjectType,
   GraphQLNonNull,
 } from 'graphql';
 
 const UserType = new GraphQLObjectType({
-  name: 'UserType',
+  name: 'User',
   description: 'User type definition',
   fields: () => ({
     id: {
       type: new GraphQLNonNull(GraphQLID),
     },
-    email: {
+    username: {
       type: new GraphQLNonNull(GraphQLString),
     },
-  }),
-});
-
-const UserInputType = new GraphQLInputObjectType({
-  name: 'UserInputType',
-  description: 'User payload definition',
-  fields: () => ({
     email: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: GraphQLString,
+    },
+    phone: {
+      type: GraphQLString,
+    },
+    firstName: {
+      type: GraphQLString,
+    },
+    lastName: {
+      type: GraphQLString,
     },
   }),
 });
 
 export {
-  UserType,
-  UserInputType,
+  UserType as default,
 };

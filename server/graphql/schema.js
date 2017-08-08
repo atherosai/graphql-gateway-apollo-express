@@ -3,23 +3,17 @@ import {
   GraphQLObjectType,
 } from 'graphql';
 
-import {
-  userQueries,
-  userMutations,
-} from './users/users';
-
-
 export default new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'Query',
     fields: () => ({
-      ...userQueries,
+      ...require('./users/userQueries.js').default,
     }),
   }),
   mutation: new GraphQLObjectType({
     name: 'Mutation',
     fields: () => ({
-      ...userMutations,
+      ...require('./users/userMutations.js').default,
     }),
   }),
 });
