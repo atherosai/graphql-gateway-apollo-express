@@ -1,13 +1,13 @@
 import {
   GraphQLList,
-  GraphQLNonNull,
 } from 'graphql';
 import { getUsers } from '../../db/users';
+import User from './userType';
 
 const userQueries = {
   users: {
-    type: new GraphQLList(require('./userType.js').default),
-    resolve: async () => await getUsers(),
+    type: new GraphQLList(User),
+    resolve: async () => getUsers(),
   },
 };
 

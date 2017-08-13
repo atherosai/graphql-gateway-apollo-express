@@ -5,20 +5,22 @@ import isEmail from 'validator/lib/isEmail';
 
 import { createUser } from '../../db/users';
 
+import User from './userType';
+import UserInput from './userInputType';
 
 const userMutations = {
   createUser: {
-    type: require('./userType').default,
+    type: User,
     args: {
       input: {
-        type: new GraphQLNonNull(require('./userInputType').default),
+        type: new GraphQLNonNull(UserInput),
       },
     },
     resolve: async (rootValue, { input }) => {
       if (!isEmail(input.email)) {
         throw new Error('Email is not in valid format');
       }
-      return await createUser(input);
+      return createUser(input);
     },
   },
 };
