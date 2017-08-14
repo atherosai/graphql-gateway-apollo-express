@@ -17,7 +17,7 @@ const userMutations = {
       },
     },
     resolve: async (rootValue, { input }) => {
-      if (!isEmail(input.email)) {
+      if (input.email && !isEmail(input.email)) {
         throw new Error('Email is not in valid format');
       }
       return createUser(input);

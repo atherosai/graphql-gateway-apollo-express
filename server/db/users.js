@@ -9,6 +9,7 @@ const users = new Array(10).fill(undefined).map(() => ({
   id: random.uuid(),
   email: internet.email(),
   phone: phone.phoneNumber(),
+  username: internet.userName(),
   firstName: name.firstName(),
   lastName: name.lastName(),
 }));
