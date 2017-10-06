@@ -3,7 +3,7 @@ import {
 } from 'graphql';
 import isEmail from 'validator/lib/isEmail';
 
-import { createUser } from '../../db/users';
+import { createUser } from '../../db/usersDb';
 
 import User from './userType';
 import UserInput from './userInputType';
