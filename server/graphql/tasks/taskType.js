@@ -3,6 +3,8 @@ import {
   GraphQLID,
   GraphQLObjectType,
   GraphQLNonNull,
+  GraphQLInt,
+  GraphQLFloat,
   GraphQLBoolean,
 } from 'graphql';
 
@@ -23,6 +25,12 @@ const taskType = new GraphQLObjectType({
     },
     state: {
       type: new GraphQLNonNull(TaskStateEnumType),
+    },
+    progress: {
+      type: new GraphQLNonNull(GraphQLFloat),
+    },
+    taskPriority: {
+      type: new GraphQLNonNull(GraphQLInt),
     },
     createdAt: {
       type: new GraphQLNonNull(DateTimeScalar),

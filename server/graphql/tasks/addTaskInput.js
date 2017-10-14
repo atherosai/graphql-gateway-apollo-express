@@ -3,6 +3,8 @@ import {
   GraphQLInputObjectType,
   GraphQLNonNull,
   GraphQLBoolean,
+  GraphQLInt,
+  GraphQLFloat,
 } from 'graphql';
 import TaskEnumType from './taskStateEnumType';
 
@@ -19,6 +21,14 @@ const addTaskInputType = new GraphQLInputObjectType({
     state: {
       type: TaskEnumType,
       defaultValue: 'unassigned',
+    },
+    taskPriority: {
+      type: GraphQLInt,
+      defaultValue: 1,
+    },
+    progress: {
+      type: GraphQLFloat,
+      defaultValue: 0,
     },
   }),
 });
