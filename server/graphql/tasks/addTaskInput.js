@@ -4,6 +4,7 @@ import {
   GraphQLNonNull,
   GraphQLBoolean,
   GraphQLInt,
+  GraphQLID,
   GraphQLFloat,
 } from 'graphql';
 import TaskEnumType from './taskStateEnumType';
@@ -33,6 +34,4 @@ const addTaskInputType = new GraphQLInputObjectType({
   }),
 });
 
-export {
-  addTaskInputType as default,
-};
+export { addTaskInputType as default };
