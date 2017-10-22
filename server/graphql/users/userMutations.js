@@ -1,19 +1,18 @@
-import {
-  GraphQLNonNull,
-} from 'graphql';
+import { GraphQLNonNull } from 'graphql';
 import isEmail from 'validator/lib/isEmail';
 
-import { createUser } from '../../db/users';
+import { createUser, updateUser } from '../../db/users';
 
 import User from './userType';
-import UserInput from './userInputType';
+import AddUserInput from './addUserInputType';
+import UpdateUserInput from './updateUserInputType';
 
 const userMutations = {
   createUser: {
     type: User,
     args: {
       input: {
-        type: new GraphQLNonNull(UserInput),
+        type: new GraphQLNonNull(AddUserInput),
       },
     },
     resolve: async (rootValue, { input }) => {
@@ -23,8 +22,15 @@ const userMutations = {
       return createUser(input);
     },
   },
+  updateUser: {
+    type: User,
+    args: {
+      input: {
+        type: new GraphQLNonNull(UpdateUserInput),
+      },
+    },
+    resolve: async (rootValue, { input }) => updateUser(input),
+  },
 };
 
-export {
-  userMutations as default,
-};
+export { userMutations as default };

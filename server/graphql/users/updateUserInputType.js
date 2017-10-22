@@ -1,15 +1,14 @@
-import {
-  GraphQLString,
-  GraphQLInputObjectType,
-  GraphQLNonNull,
-} from 'graphql';
+import { GraphQLString, GraphQLInputObjectType, GraphQLNonNull, GraphQLID } from 'graphql';
 
 const UserInputType = new GraphQLInputObjectType({
-  name: 'UserInput',
+  name: 'UpdateUserInput',
   description: 'Input user payload',
   fields: () => ({
+    id: {
+      type: new GraphQLNonNull(GraphQLID),
+    },
     username: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: GraphQLString,
     },
     email: {
       type: GraphQLString,
@@ -26,6 +25,4 @@ const UserInputType = new GraphQLInputObjectType({
   }),
 });
 
-export {
-  UserInputType as default,
-};
+export { UserInputType as default };
