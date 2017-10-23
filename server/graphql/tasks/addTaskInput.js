@@ -8,6 +8,7 @@ import {
   GraphQLFloat,
 } from 'graphql';
 import TaskEnumType from './taskStateEnumType';
+import DateTime from '../scalars/dateTimeScalar';
 
 const addTaskInputType = new GraphQLInputObjectType({
   name: 'AddTaskInput',
@@ -30,6 +31,9 @@ const addTaskInputType = new GraphQLInputObjectType({
     progress: {
       type: GraphQLFloat,
       defaultValue: 0,
+    },
+    dueDate: {
+      type: DateTime,
     },
   }),
 });

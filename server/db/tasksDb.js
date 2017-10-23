@@ -9,7 +9,7 @@ const tasks = [
     updatedAt: '2017-10-06T14:54:54+00:00',
     taskPriority: 1,
     progress: '55.5',
-    state: 1,
+    state: 2.0,
   },
 ];
 
