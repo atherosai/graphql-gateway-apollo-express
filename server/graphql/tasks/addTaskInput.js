@@ -22,7 +22,7 @@ const addTaskInputType = new GraphQLInputObjectType({
     },
     state: {
       type: TaskEnumType,
-      defaultValue: 'unassigned',
+      defaultValue: 1,
     },
     taskPriority: {
       type: GraphQLInt,

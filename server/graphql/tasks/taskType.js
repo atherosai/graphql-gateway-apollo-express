@@ -32,6 +32,9 @@ const taskType = new GraphQLObjectType({
     taskPriority: {
       type: new GraphQLNonNull(GraphQLInt),
     },
+    dueDate: {
+      type: DateTimeScalar,
+    },
     createdAt: {
       type: new GraphQLNonNull(DateTimeScalar),
     },

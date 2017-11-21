@@ -13,7 +13,11 @@ const taskMutations = {
         type: new GraphQLNonNull(addTaskInput),
       },
     },
-    resolve: async (source, { input }) => addTask(input),
+    resolve: async (source, { input }) => {
+      console.log('input', input);
+      const result = await addTask(input);
+      return result;
+    },
   },
 };
 
