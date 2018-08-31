@@ -15,4 +15,4 @@ npm i
 npm run dev
 ```
 
-after that the graphiql can be accessed at http://localhost:3000/graphiql.
+after that the graphiql can be accessed at http://localhost:3000/graphql.

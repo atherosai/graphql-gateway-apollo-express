@@ -1,3 +1,4 @@
+import { random } from 'faker';
 
 const users = [
   {
@@ -62,12 +63,15 @@ const createUser = (input) => {
   });
 };
 
+const getOneUser = ({ id }) => new Promise(resolve => resolve(users.find(user => user.id === id)));
+
 const getUsers = () => new Promise((resolve) => {
   setTimeout(() =>
     resolve(users), 50);
 });
 
 export {
+  getOneUser,
   createUser,
   getUsers,
 };

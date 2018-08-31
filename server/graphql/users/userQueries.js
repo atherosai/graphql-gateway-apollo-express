@@ -1,13 +1,27 @@
 import {
   GraphQLList,
+  GraphQLID,
+  GraphQLNonNull,
 } from 'graphql';
-import { getUsers } from '../../db/usersDb';
+import { getUsers, getOneUser } from '../../db/usersDb';
 import User from './userType';
 import UserRoleEnum from './userRoleEnumType';
 
 const userQueries = {
+  user: {
+    type: User,
+    args: {
+      id: {
+        type: new GraphQLNonNull(GraphQLID),
+      },
+    },
+    resolve: async (source, { id }) => {
+      const result = await getOneUser({ id });
+      return result;
+    },
+  },
   users: {
-    type: new GraphQLList(User),
+    type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(User))),
     args: {
       role: {
         type: UserRoleEnum,

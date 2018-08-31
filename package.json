@@ -15,10 +15,9 @@
   "author": "David Mráz <david.mraz@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^1.0.5",
+    "apollo-server-express": "^2.0.4",
     "babel-polyfill": "^6.23.0",
     "babel-register": "^6.24.1",
-    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "faker": "^4.1.0",
     "graphql": "^0.10.3",
