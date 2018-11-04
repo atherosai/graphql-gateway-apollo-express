@@ -1,0 +1,9 @@
+language: flow
+
+schema: ./schema.json
+
+output: ./server/generated/graphqlgen.ts
+
+resolver-scaffolding:
+  output: ./server/generated/tmp-resolvers/
+  layout: file-per-type

@@ -1,8 +1,4 @@
-import {
-  GraphQLList,
-  GraphQLID,
-  GraphQLNonNull,
-} from 'graphql';
+import { GraphQLList, GraphQLID, GraphQLNonNull } from 'graphql';
 import { getUsers, getOneUser } from '../../db/usersDb';
 import User from './userType';
 import UserRoleEnum from './userRoleEnumType';
@@ -37,6 +33,4 @@ const userQueries = {
   },
 };
 
-export {
-  userQueries as default,
-};
+export { userQueries as default };

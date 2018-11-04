@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -w server/ --exec 'NODE_ENV=development node server/'",
-    "start": "NODE_ENV=production node server/"
+    "start": "NODE_ENV=production node server/",
+    "generate:flow": "yarn run apollo:download && yarn run apollo:generate",
+    "apollo:download": "apollo schema:download --endpoint http://localhost:3000/graphql schema.graphql",
+    "apollo:generate": "apollo codegen:generate  --schema=./schema.graphql --queries=*/**.graphql --target --addTypename flow __generated__",
+    "gql:generate": "gql-gen -s schema.json -t ts --out types/generated.gen.ts"
   },
   "keywords": [
     "graphql",
@@ -15,11 +19,13 @@
   "author": "David Mráz <david.mraz@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "apollo": "^1.9.2",
     "apollo-server-express": "^2.0.4",
     "babel-polyfill": "^6.23.0",
     "babel-register": "^6.24.1",
     "express": "^4.15.3",
     "faker": "^4.1.0",
+    "global": "^4.3.2",
     "graphql": "^0.10.3",
     "validator": "^8.0.0"
   },
@@ -31,6 +37,8 @@
     "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
+    "graphql-code-generator": "^0.13.0",
+    "graphql-codegen-typescript-template": "^0.13.0",
     "nodemon": "^1.11.0"
   }
 }
