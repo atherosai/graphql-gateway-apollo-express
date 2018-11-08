@@ -3,6 +3,7 @@ import {
   GraphQLID,
   GraphQLObjectType,
   GraphQLNonNull,
+  GraphQLBoolean,
 } from 'graphql';
 
 const UserType = new GraphQLObjectType({
@@ -27,9 +28,10 @@ const UserType = new GraphQLObjectType({
     lastName: {
       type: GraphQLString,
     },
+    active: {
+      type: GraphQLBoolean,
+    },
   }),
 });
 
-export {
-  UserType as default,
-};
+export { UserType as default };

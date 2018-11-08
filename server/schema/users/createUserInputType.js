@@ -1,8 +1,4 @@
-import {
-  GraphQLString,
-  GraphQLInputObjectType,
-  GraphQLNonNull,
-} from 'graphql';
+import { GraphQLString, GraphQLInputObjectType, GraphQLNonNull } from 'graphql';
 
 const createUserInputType = new GraphQLInputObjectType({
   name: 'CreateUserInput',
@@ -25,6 +21,4 @@ const createUserInputType = new GraphQLInputObjectType({
   }),
 });
 
-export {
-  createUserInputType as default,
-};
+export { createUserInputType as default };

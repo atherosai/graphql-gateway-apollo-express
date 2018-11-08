@@ -26,6 +26,8 @@ export interface User {
   firstName?: string | null;
 
   lastName?: string | null;
+
+  active?: boolean | null;
 }
 
 export interface Mutation {
@@ -55,20 +57,8 @@ export interface CreateUserInput {
 export interface UserQueryArgs {
   id: string;
 }
-export interface UsersQueryArgs {
-  role?: RoleEnum | null;
-}
 export interface CreateUsersMutationArgs {
   input?: (CreateUserInput | null)[] | null;
-}
-
-// ====================================================
-// Enums
-// ====================================================
-
-export enum RoleEnum {
-  admin = "admin",
-  accountant = "accountant"
 }
 
 // ====================================================

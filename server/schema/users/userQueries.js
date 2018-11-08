@@ -1,7 +1,6 @@
 import { GraphQLList, GraphQLID, GraphQLNonNull } from 'graphql';
 import { getUsers, getOneUser } from '../../db/usersDb';
 import User from './userType';
-import UserRoleEnum from './userRoleEnumType';
 
 const userQueries = {
   user: {
@@ -18,11 +17,6 @@ const userQueries = {
   },
   users: {
     type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(User))),
-    args: {
-      role: {
-        type: UserRoleEnum,
-      },
-    },
     resolve: async (source, { role }) => {
       const result = await getUsers();
       if (role) {
