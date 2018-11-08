@@ -10,6 +10,9 @@ export interface getUsers_users {
   firstName: string | null;
   lastName: string | null;
   username: string;
+  email: string | null;
+  phone: string | null;
+  active: boolean | null;
 }
 
 export interface getUsers {

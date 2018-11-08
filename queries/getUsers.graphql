@@ -4,5 +4,8 @@ query getUsers {
     firstName
     lastName
     username
+    email
+    phone
+    active
   }
 }
