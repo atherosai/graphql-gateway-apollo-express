@@ -12,7 +12,7 @@
     "apollo:generate:flow": "apollo codegen:generate --schema schema.json --target flow __generated__",
     "codegen:generate": "gql-gen -s schema -t ts --out types/generated.gen.ts",
     "codegen:resolvers": "gql-gen -t graphql-codegen-typescript-resolvers-template -s schema.json --out ./types/resolvers-types.ts",
-    "codegen:react-apollo": "gql-gen -t graphql-codegen-typescript-react-apollo-template -s schema.json --out ./types/react-apollo.ts"
+    "codegen:react-apollo": "gql-gen --schema http://localhost:3000/graphql -t graphql-codegen-typescript-react-apollo-template  --out ./types/react-apollo.ts \"./queries/**/*.graphql\""
   },
   "keywords": ["graphql", "express", "typescript", "type-generation"],
   "author": "David Mráz <david@atheros.ai>",
