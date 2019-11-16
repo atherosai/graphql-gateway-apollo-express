@@ -13,3 +13,9 @@ export const createUser = (input) => {
 export const getUsers = () => {
     return users;
 }
+
+export const getOneUser = (id) => {
+    return users.find((user) => {
+        return user.id === id
+    })
+}

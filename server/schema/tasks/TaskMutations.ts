@@ -13,8 +13,8 @@ const TaskMutations = {
         type: new GraphQLNonNull(CreateTaskInput),
       },
     },
-    resolve: async ({}, { input }) => {
-      const createdTask = await createTask(input);
+    resolve: (_source, { input }) => {
+      const createdTask = createTask(input);
       return {
         task: createdTask
       }

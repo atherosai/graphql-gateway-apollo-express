@@ -42,7 +42,6 @@ type Mutation {
 }
 
 type Query {
-  user(id: ID!): User
   users(role: UserRoleEnum): [User!]!
   tasks: [Task]!
 }

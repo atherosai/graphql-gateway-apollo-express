@@ -17,11 +17,15 @@ const UserMutations = {
                 type: new GraphQLNonNull(CreateUserInput),
             },
         },
-        resolve: async ({}, { input }) => {
+        resolve: (_source, args) => {
+            const { input } = args;
+
             if (input.email && !isEmail(input.email)) {
                 throw new Error('Email is not in valid format');
             }
-            return createUser(input);
+            return {
+                user: createUser(input)
+            }
         },
     },
     createUsers: {
@@ -31,7 +35,7 @@ const UserMutations = {
                 type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(CreateUserInput)))
             }
         },
-        resolve: ({}, { input }) => {
+        resolve: (_source, { input }) => {
             const createUsers = input.map(userPayload => createUser(userPayload));
             return {
                 users: createUsers

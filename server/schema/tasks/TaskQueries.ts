@@ -9,7 +9,7 @@ import {
   const TaskQueries = {
     tasks: {
       type: new GraphQLNonNull(new GraphQLList(Task)),
-      resolve: async () => getTasks(),
+      resolve: () => getTasks(),
     },
   };
   
