@@ -31,4 +31,4 @@ const CreateUserInputType = new GraphQLInputObjectType({
   }),
 });
   
-  export default CreateUserInputType;
+export default CreateUserInputType;

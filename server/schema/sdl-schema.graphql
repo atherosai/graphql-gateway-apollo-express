@@ -1,10 +1,15 @@
-input AddTaskInput {
+input CreateTaskInput {
   name: String!
   completed: Boolean = false
   state: TaskStateEnum
   taskPriority: Int = 1
   progress: Float = 0
   dueDate: DateTime
+}
+
+"""CreateTaskPayload type definition"""
+type CreateTaskPayload {
+  task: Task!
 }
 
 """Input payload for creating user"""
@@ -17,13 +22,23 @@ input CreateUserInput {
   role: UserRoleEnum = ACCOUNTANT
 }
 
+"""User type definition"""
+type CreateUserPayload {
+  user: User!
+}
+
+"""User type definition"""
+type CreateUsersPayload {
+  users: [User]
+}
+
 """An ISO-8601 encoded UTC date string."""
 scalar DateTime
 
 type Mutation {
-  createUser(input: CreateUserInput!): User
-  createUsers(input: [CreateUserInput!]!): [User!]!
-  createTask(input: AddTaskInput!): Task!
+  createUser(input: CreateUserInput!): CreateUserPayload
+  createUsers(input: [CreateUserInput!]!): CreateUsersPayload
+  createTask(input: CreateTaskInput!): CreateTaskPayload
 }
 
 type Query {
@@ -59,6 +74,8 @@ type User {
   firstName: String
   lastName: String
   role: UserRoleEnum!
+  createdAt: DateTime!
+  updatedAt: DateTime
 }
 
 enum UserRoleEnum {
