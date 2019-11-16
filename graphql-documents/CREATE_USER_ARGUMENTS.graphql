@@ -1,0 +1,10 @@
+mutation createUser {
+  createUser(input: {username: "test", email: "test@test.cz", phone: "479332973", firstName: "David", lastName: "Test"}) {
+    id
+    username
+    email
+    phone
+    firstName
+    lastName
+  }
+}
