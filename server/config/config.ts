@@ -6,7 +6,7 @@ export const { NODE_ENV, CUSTOM_ENV } = process.env;
 if (!NODE_ENV) throw new Error('NODE_ENV is not defined');
 if (!CUSTOM_ENV) throw new Error('CUSTOM_ENV is not defined');
 
-const DIR = path.resolve(__dirname, "../..");
+const DIR = path.resolve(__dirname, NODE_ENV === 'production' ? "../../.." :"../..");
 
 config({
   path: `${DIR}/secrets/${NODE_ENV}-${CUSTOM_ENV}.env`,

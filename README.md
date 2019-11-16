@@ -20,7 +20,7 @@ GraphQL playground is then accesible at
 
 [http://localhost:8000/graphql](http://localhost:8000/graphql)
 
-## technologies
+## Technologies
 
 * Node.js
 * Apollo server

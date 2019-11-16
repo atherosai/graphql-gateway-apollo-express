@@ -2,7 +2,6 @@
     "compilerOptions": {
       "target": "esnext",
       "lib": ["es2017"],
-      "baseUrl": ".",
       "allowSyntheticDefaultImports": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
@@ -13,7 +12,6 @@
       "skipLibCheck": true,
       "strict": false,
       "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
       "esModuleInterop": true,
       "module": "commonjs",
       "moduleResolution": "node",
