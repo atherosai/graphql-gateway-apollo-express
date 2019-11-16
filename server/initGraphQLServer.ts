@@ -9,7 +9,7 @@ const apolloServer = new ApolloServer({
     res,
   }),
   schema,
-  introspection: NODE_ENV !== 'production',
+  introspection: NODE_ENV !== 'production' && CUSTOM_ENV !== "production",
   validationRules: [depthLimit(10)],
 });
 

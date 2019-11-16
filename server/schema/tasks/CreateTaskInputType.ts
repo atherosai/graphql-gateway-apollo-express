@@ -5,7 +5,6 @@ import {
     GraphQLNonNull,
     GraphQLBoolean,
     GraphQLInt,
-    GraphQLID,
     GraphQLFloat,
   } from 'graphql';
   import TaskStateEnum from './TaskStateEnumType';

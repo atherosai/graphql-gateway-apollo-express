@@ -2,7 +2,6 @@
 import {
     GraphQLList,
     GraphQLNonNull,
-    GraphQLID
   } from 'graphql';
   import { getTasks } from '../../operations/tasks-operations';
   import Task from './TaskType';

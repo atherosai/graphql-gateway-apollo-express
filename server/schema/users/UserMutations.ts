@@ -4,8 +4,7 @@ import {
     GraphQLNonNull
   } from 'graphql';
 import { isEmail } from 'validator';
-import { getUsers, createUser } from '../../operations/users-operations';
-import User from './UserType';
+import { createUser } from '../../operations/users-operations';
 import CreateUserInput from "./CreateUserInputType";
 import CreateUserPayload from "./CreateUserPayload";
 import CreateUsersPayload from "./CreateUsersPayload";

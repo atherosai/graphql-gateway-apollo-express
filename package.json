@@ -10,8 +10,8 @@
     "test:watch": "jest --watch",
     "transpile:server": "tsc --project tsconfig.json",
     "dev": "NODE_ENV=development CUSTOM_ENV=local nodemon server",
-    "staging": "npm run transpile:server && NODE_ENV=production CUSTOM_ENV=staging npm run start",
-    "production": "npm run transpile:server && NODE_ENV=production CUSTOM_ENV=staging npm run start",
+    "staging": "npm run transpile:server && NODE_ENV=production CUSTOM_ENV=staging node dist/server/index.js --expose-http2 ",
+    "production": "npm run transpile:server && NODE_ENV=production CUSTOM_ENV=production node dist/server/index.js --expose-http2 ",
     "gen:schema": "ts-node --project tsconfig.json server/lib/gen-sdl-schema.ts"
   },
   "keywords": [
@@ -25,7 +25,6 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^2.9.9",
-    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^14.5.8",

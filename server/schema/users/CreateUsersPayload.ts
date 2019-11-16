@@ -1,8 +1,5 @@
 import {
-    GraphQLString,
-    GraphQLID,
     GraphQLObjectType,
-    GraphQLNonNull,
     GraphQLList
 } from 'graphql';
 import User from "./UserType"

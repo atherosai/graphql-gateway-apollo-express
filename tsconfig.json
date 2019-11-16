@@ -1,11 +1,14 @@
 {
     "compilerOptions": {
-      "target": "es5",
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
+      "target": "esnext",
+      "lib": ["es2017"],
+      "baseUrl": ".",
+      "allowSyntheticDefaultImports": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "removeComments": false,
+      "preserveConstEnums": true,
+      "sourceMap": true,
       "allowJs": true,
       "skipLibCheck": true,
       "strict": false,
@@ -15,13 +18,12 @@
       "module": "commonjs",
       "moduleResolution": "node",
       "resolveJsonModule": true,
-      "jsx": "preserve"
+      "isolatedModules": false,
+      "outDir": "dist"
     },
-    "exclude": [
-      "node_modules"
-    ],
+    "exclude": ["dist"],
     "include": [
-      "**/*.ts"
+      "**/*.ts",
     ]
   }
   
