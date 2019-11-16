@@ -1,0 +1,67 @@
+input AddTaskInput {
+  name: String!
+  completed: Boolean = false
+  state: TaskStateEnum
+  taskPriority: Int = 1
+  progress: Float = 0
+  dueDate: DateTime
+}
+
+"""Input payload for creating user"""
+input CreateUserInput {
+  username: String!
+  email: String
+  phone: String
+  firstName: String
+  lastName: String
+  role: UserRoleEnum = ACCOUNTANT
+}
+
+"""An ISO-8601 encoded UTC date string."""
+scalar DateTime
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  createUsers(input: [CreateUserInput!]!): [User!]!
+  createTask(input: AddTaskInput!): Task!
+}
+
+type Query {
+  user(id: ID!): User
+  users(role: UserRoleEnum): [User!]!
+  tasks: [Task]!
+}
+
+type Task {
+  id: ID!
+  name: String!
+  completed: Boolean!
+  state: TaskStateEnum!
+  progress: Float!
+  taskPriority: Int!
+  dueDate: DateTime
+  createdAt: DateTime!
+  updatedAt: DateTime
+}
+
+enum TaskStateEnum {
+  ASSIGNED
+  UNASSIGNED
+  IN_PROGRESS
+}
+
+"""User type definition"""
+type User {
+  id: ID!
+  username: String!
+  email: String
+  phone: String
+  firstName: String
+  lastName: String
+  role: UserRoleEnum!
+}
+
+enum UserRoleEnum {
+  ADMIN
+  ACCOUNTANT
+}

@@ -1,0 +1,12 @@
+mutation {
+  createUsers(input: [{lastName: "Test", firstName: "test", username: "t1est"}, {lastName: "Test", firstName: "test", username: "te2st"}]) {
+    users {
+        id
+        firstName
+        lastName
+        phone
+        email
+        username
+    }
+  }
+}

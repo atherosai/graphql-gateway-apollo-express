@@ -1,0 +1,10 @@
+query getTasks {
+  tasks {
+    id
+    name
+    completed
+    state
+    progress
+    taskPriority
+  }
+}

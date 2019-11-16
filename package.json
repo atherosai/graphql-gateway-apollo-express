@@ -1,0 +1,62 @@
+{
+  "name": "graphql-gateway",
+  "version": "1.0.0",
+  "description": "GraphQL gateway for Atheros Intelligence spol s r.o.",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test CUSTOM_ENV=local jest",
+    "test:unit": "NODE_ENV=test CUSTOM_ENV=local jest --config tests/jest.unit.config.json",
+    "test:integration": "NODE_ENV=test CUSTOM_ENV=local jest --config tests/jest.integration.config.json",
+    "test:watch": "jest --watch",
+    "transpile:server": "tsc --project tsconfig.json",
+    "dev": "NODE_ENV=development CUSTOM_ENV=local nodemon server",
+    "staging": "npm run transpile:server && NODE_ENV=production CUSTOM_ENV=staging npm run start",
+    "production": "npm run transpile:server && NODE_ENV=production CUSTOM_ENV=staging npm run start",
+    "gen:schema": "ts-node --project tsconfig.json server/lib/gen-sdl-schema.ts"
+  },
+  "keywords": [
+    "graphql",
+    "express",
+    "typescript",
+    "node",
+    "apollo-server"
+  ],
+  "author": "Atheros Intelligence <hello@atheros.ai>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.9.9",
+    "cors": "^2.8.5",
+    "dataloader": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-depth-limit": "^1.1.0",
+    "graphql-validation-complexity": "^0.2.5",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "nexus": "^0.12.0-rc.4",
+    "uuid": "^3.3.3",
+    "validator": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/graphql-depth-limit": "^1.1.2",
+    "@types/helmet": "0.0.45",
+    "@types/jest": "^24.0.23",
+    "@types/uuid": "^3.4.6",
+    "babel-eslint": "^10.0.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "jest-runner-eslint": "^0.7.5",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
+}

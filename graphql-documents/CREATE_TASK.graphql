@@ -1,0 +1,15 @@
+mutation createTask {
+  createTask(input: {
+    name: "Next task",
+    state: ASSIGNED
+  }) {
+    task {
+      id
+      name
+      completed
+      state
+      progress
+      taskPriority
+    }
+  }
+}
