@@ -1,0 +1,18 @@
+query getUsers {
+  admins: users(role: ADMIN) {
+    id
+    firstName
+    lastName
+    phone
+    username
+    role
+  }
+  accountants: users(role: ACCOUNTANT) {
+    id
+    firstName
+    lastName
+    phone
+    username
+    role
+  }
+}

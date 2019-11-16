@@ -1,0 +1,16 @@
+fragment userFields on User {
+    id
+    firstName
+    lastName
+    phone
+    username
+    role
+}
+query getUsers {
+  admins: users(role: ADMIN) {
+    ...userFields
+  }
+  accountants: users(role: ACCOUNTANT) {
+    ...userFields
+  }
+}

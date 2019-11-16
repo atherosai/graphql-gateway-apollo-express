@@ -30,7 +30,8 @@ const UserQueries = {
         },
         resolve: ({}, { role }) => {
             const result = getUsers();
-            if (role) {
+            if (role != null) {
+                console.log("role", role, result.filter(user => user.role === role))
                return result.filter(user => user.role === role);
             }
             return result;
