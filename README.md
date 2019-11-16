@@ -2,6 +2,24 @@
 
 Starter kit for building API gateway with GraphQL
 
+## Setup
+
+You can run the code by installing dependencies with
+
+``` bash
+npm i
+```
+
+and running development environment
+
+``` bash
+npm run dev
+```
+
+GraphQL playground is then accesible at
+
+[http://localhost:8000/graphql](http://localhost:8000/graphql)
+
 ## technologies
 
 * Node.js
@@ -22,3 +40,8 @@ Starter kit for building API gateway with GraphQL
 * [How to query your schema with GraphQL fragments](https://atheros.ai/blog/how-to-query-your-schema-with-graphql-fragments)
 * [GraphQL List - How to use arrays in GraphQL schema](https://atheros.ai/blog/graphql-list-how-to-use-arrays-in-graphql-schema)
 
+## Notes
+
+* secrets folder should be encrypted using some vault solutions like Google KMS
+* https/www redirects should be performed in reverse proxy
+* this starter kit has minimal setup and is continously evolving
