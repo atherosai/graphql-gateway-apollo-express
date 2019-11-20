@@ -1,9 +1,9 @@
 import {
-    GraphQLString,
-    GraphQLInputObjectType,
-    GraphQLNonNull,
-  } from 'graphql';
-import UserRole from "./UserRoleEnumType";
+  GraphQLString,
+  GraphQLInputObjectType,
+  GraphQLNonNull,
+} from 'graphql';
+import UserRole from './UserRoleEnumType';
 
 const CreateUserInputType = new GraphQLInputObjectType({
   name: 'CreateUserInput',
@@ -26,9 +26,9 @@ const CreateUserInputType = new GraphQLInputObjectType({
     },
     role: {
       type: UserRole,
-      defaultValue: UserRole.getValue("ACCOUNTANT").value
-    }
+      defaultValue: UserRole.getValue('ACCOUNTANT').value,
+    },
   }),
 });
-  
+
 export default CreateUserInputType;

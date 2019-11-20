@@ -1,6 +1,5 @@
 
-
-import { Request, Response, NextFunction } from "express"
+import { Request, Response, NextFunction } from 'express';
 
 const isSecure = (req: Request) => {
   if (req.secure) {
@@ -12,7 +11,9 @@ const isSecure = (req: Request) => {
   return req.headers['x-forwarded-proto'] === 'https';
 };
 
-export const httpsRedirect = (redirectLocalhost = false) => (req: Request, res: Response, next: NextFunction) => {
+export const httpsRedirect = (redirectLocalhost = false) => (
+  req: Request, res: Response, next: NextFunction,
+) => {
   if (req.hostname === 'localhost' && !redirectLocalhost) {
     return next();
   }
@@ -24,9 +25,9 @@ export const httpsRedirect = (redirectLocalhost = false) => (req: Request, res: 
 };
 
 export const wwwRedirect = () => (req: Request, res: Response, next: NextFunction) => {
-    if (req.headers && req.headers.host && req.headers.host.match && req.headers.host.match(/^www/) !== null) {
-      res.redirect(`https://${req.headers.host.replace(/^www\./, '')}${req.url}`);
-    }
+  if (req.headers && req.headers.host && req.headers.host.match && req.headers.host.match(/^www/) !== null) {
+    res.redirect(`https://${req.headers.host.replace(/^www\./, '')}${req.url}`);
+  }
 
-    next();
-}
+  next();
+};

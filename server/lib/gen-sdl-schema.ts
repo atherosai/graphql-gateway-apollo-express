@@ -1,15 +1,13 @@
-import { printSchema } from "graphql/utilities"
-import fs from "fs";
-import path from "path";
-import schema from "../schema";
+import { printSchema } from 'graphql/utilities';
+import fs from 'fs';
+import path from 'path';
+import schema from '../schema';
 
-fs.writeFile(path.join(__dirname,"/../schema/sdl-schema.graphql"), printSchema(schema), (err) => {
+fs.writeFile(path.join(__dirname, '/../schema/sdl-schema.graphql'), printSchema(schema), (err) => {
+  if (err) {
+    throw Error('Generating SDL schema was not successful');
+  }
 
-    if (err) {
-        return console.log(err);
-    }
-
-    console.log("The schema was saved!");
-}); 
-
-
+  // eslint-disable-next-line no-console
+  console.info('The schema was saved!');
+});

@@ -6,8 +6,8 @@ import {
 
 import UserQueries from './users/UserQueries';
 import UserMutations from './users/UserMutations';
-import TaskMutations from "./tasks/TaskMutations";
-import TaskQueries from "./tasks/TaskQueries";
+import TaskMutations from './tasks/TaskMutations';
+import TaskQueries from './tasks/TaskQueries';
 
 
 const schema = new GraphQLSchema({
@@ -15,14 +15,14 @@ const schema = new GraphQLSchema({
     name: 'Query',
     fields: () => ({
       ...UserQueries,
-      ...TaskQueries
+      ...TaskQueries,
     }),
   }),
   mutation: new GraphQLObjectType({
     name: 'Mutation',
     fields: () => ({
       ...UserMutations,
-      ...TaskMutations
+      ...TaskMutations,
     }),
   }),
 });

@@ -1,34 +1,20 @@
 
 {
   "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
+    "jest": true
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "modules": true,
-      "arrowFunctions": true,
-      "classes": true
-    }
-  },
-  "extends": ["eslint-config-airbnb", "prettier", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["airbnb/base", "plugin:@typescript-eslint/recommended", "plugin:security/recommended"],
   "plugins": [
+    "security",
     "prettier",
     "@typescript-eslint"
   ],
-  "rules": {
-    "no-param-reassign": ["error", { "props": false }],
-    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
-    "func-names": ["error", "never"],
-    "react/jsx-filename-extension": "off",
-    "react/no-danger": "off",
-    "import/no-extraneous-dependencies": "off",
-    "prettier/prettier": "error",
-    "global-require": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }

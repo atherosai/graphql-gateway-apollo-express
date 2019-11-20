@@ -1,0 +1,23 @@
+{
+    "[markdown]": {
+        "editor.wordWrapColumn": 110,
+        "editor.wordWrap": "wordWrapColumn"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        {
+            "autoFix": true,
+            "language": "typescript"
+        },
+    ],
+    "prettier-eslint.eslintIntegration": true
+}

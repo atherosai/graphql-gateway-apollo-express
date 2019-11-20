@@ -1,9 +1,9 @@
 import {
-    GraphQLNonNull,
-  } from 'graphql';
+  GraphQLNonNull,
+} from 'graphql';
 import { createTask } from '../../operations/tasks-operations';
 import CreateTaskInput from './CreateTaskInputType';
-import CreateTaskPayload from "./CreateTaskPayloadType"
+import CreateTaskPayload from './CreateTaskPayloadType';
 
 const TaskMutations = {
   createTask: {
@@ -16,10 +16,10 @@ const TaskMutations = {
     resolve: (_source, { input }) => {
       const createdTask = createTask(input);
       return {
-        task: createdTask
-      }
+        task: createdTask,
+      };
     },
   },
 };
 
-export default TaskMutations
+export default TaskMutations;

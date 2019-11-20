@@ -1,4 +1,4 @@
-query IntrospectTaskStateEnumType {
+query introspectTaskStateEnumType {
     __type(name: "TaskStateEnum") {
       enumValues {
         name
