@@ -17,7 +17,6 @@ if (NODE_ENV === 'production') {
   app.use('/*', httpsRedirect());
 
   app.get('/*', wwwRedirect());
-
 }
 
 // GraphQL server setup
