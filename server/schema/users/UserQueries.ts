@@ -15,10 +15,9 @@ const UserQueries = {
         type: UserRoleEnum,
       },
     },
-    resolve: (_srource, { role }) => {
+    resolve: (_source, { role }) => {
       const result = getUsers();
       if (role != null) {
-        console.log('role', role, result.filter((user) => user.role === role));
         return result.filter((user) => user.role === role);
       }
       return result;
