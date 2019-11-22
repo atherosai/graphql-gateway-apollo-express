@@ -4,7 +4,7 @@ import {
   GraphQLNonNull,
 } from 'graphql';
 import { isEmail } from 'validator';
-import { createUser } from '../../operations/users-operations';
+import { createUser, createUsers } from '../../operations/users-operations';
 import CreateUserInput from './CreateUserInputType';
 import CreateUserPayload from './CreateUserPayload';
 import CreateUsersPayload from './CreateUsersPayload';
@@ -36,9 +36,9 @@ const UserMutations = {
       },
     },
     resolve: (_source, { input }) => {
-      const createUsers = input.map((userPayload) => createUser(userPayload));
+      const createdUsers = createUsers(input);
       return {
-        users: createUsers,
+        users: createdUsers,
       };
     },
   },

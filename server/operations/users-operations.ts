@@ -10,6 +10,15 @@ export const createUser = (input) => {
   return newUser;
 };
 
+export const createUsers = (input) => {
+  const usersInput = input.map((user) => ({
+    id: genId(),
+    ...user,
+  }));
+  users.push(...usersInput);
+  return usersInput;
+};
+
 export const getUsers = () => users;
 
 export const getOneUser = (id) => users.find((user) => user.id === id);

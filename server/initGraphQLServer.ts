@@ -24,6 +24,13 @@ const apolloServer = new ApolloServer({
   schema,
   introspection: NODE_ENV !== 'production' && CUSTOM_ENV !== 'production',
   validationRules: [depthLimit(7), queryComplexityRule],
+  formatError: (err): Error => {
+    if (err.message.startsWith('Database Error: ')) {
+      return new Error('Internal server error');
+    }
+
+    return err;
+  },
 });
 
 export default apolloServer;
