@@ -1,7 +1,7 @@
 
 import { GraphQLScalarType } from 'graphql';
 
-import { isISO8601 } from 'validator';
+import isISO8601 from 'validator/lib/isISO8601';
 
 // This is only very simple DateTime scalar to show how to create your custom scalars.
 // You can use some of the libraries for production use cases.

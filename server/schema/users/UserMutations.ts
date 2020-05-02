@@ -3,7 +3,7 @@ import {
   GraphQLList,
   GraphQLNonNull,
 } from 'graphql';
-import { isEmail } from 'validator';
+import isEmail from 'validator/lib/isEmail';
 import { createUser, createUsers } from '../../operations/users-operations';
 import CreateUserInput from './CreateUserInputType';
 import CreateUserPayload from './CreateUserPayload';
