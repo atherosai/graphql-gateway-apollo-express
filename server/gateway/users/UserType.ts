@@ -4,8 +4,8 @@ import {
   GraphQLObjectType,
   GraphQLNonNull,
 } from 'graphql';
-import UserRoleEnum from './UserRoleEnumType';
-import DateTime from '../custom-scalars/DateTime';
+import UserRoleEnum from '@users/UserRoleEnumType';
+import DateTime from '@gateway/custom-scalars/DateTime';
 
 
 const User = new GraphQLObjectType({

@@ -1,27 +1,23 @@
 {
     "compilerOptions": {
       "target": "esnext",
-      "lib": ["es2017"],
-      "allowSyntheticDefaultImports": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "removeComments": false,
-      "preserveConstEnums": true,
-      "sourceMap": true,
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": false,
-      "forceConsistentCasingInFileNames": true,
-      "esModuleInterop": true,
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": false,
-      "outDir": "dist"
+      "lib": ["esnext"],
+      "strict": false /* Enable all strict type-checking options. */,
+      "strictPropertyInitialization": false /* Enable strict checking of property initialization in classes. */,
+      "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
+      "baseUrl": "." /* Base directory to resolve non-absolute module names. */,  
+      "paths": {
+        "@server/*": ["./server/*"],
+        "@gateway/*": ["./server/gateway/*"],
+        "@users/*": ["./server/gateway/users/*"],
+        "@tasks/*": ["./server/gateway/tasks/*"],
+        "@lib/*": ["./server/lib/*"],
+        "@db/*": ["./server/db/*"],
+        "@config/*": ["./server/config/*"],
+      },
+      "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+      "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
+      "emitDecoratorMetadata": true 
     },
-    "exclude": ["dist"],
-    "include": [
-      "**/*.ts",
-    ]
   }
   

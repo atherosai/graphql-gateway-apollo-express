@@ -1,6 +1,5 @@
-
-import genId from '../lib/gen-id';
-import tasks from '../db/tasks-db';
+import genId from '@lib/gen-id';
+import tasks from '@db/tasks-db';
 
 export const createTask = (input) => {
   const newTask = {

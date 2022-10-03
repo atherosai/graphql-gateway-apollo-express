@@ -19,5 +19,8 @@
             "language": "typescript"
         },
     ],
-    "prettier-eslint.eslintIntegration": true
+    "prettier-eslint.eslintIntegration": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }

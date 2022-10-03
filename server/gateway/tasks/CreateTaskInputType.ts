@@ -7,8 +7,8 @@ import {
   GraphQLInt,
   GraphQLFloat,
 } from 'graphql';
-import TaskStateEnum from './TaskStateEnumType';
-import DateTime from '../custom-scalars/DateTime';
+import TaskStateEnum from '@tasks/TaskStateEnumType';
+import DateTime from '@gateway/custom-scalars/DateTime';
 
 const CreateTaskInputType = new GraphQLInputObjectType({
   name: 'CreateTaskInput',

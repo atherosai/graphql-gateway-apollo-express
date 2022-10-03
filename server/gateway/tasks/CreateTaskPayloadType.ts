@@ -2,7 +2,7 @@ import {
   GraphQLObjectType,
   GraphQLNonNull,
 } from 'graphql';
-import Task from './TaskType';
+import Task from '@tasks/TaskType';
 
 const CreateTaskPayload = new GraphQLObjectType({
   name: 'CreateTaskPayload',

@@ -3,9 +3,9 @@ import {
   GraphQLList,
   GraphQLNonNull,
 } from 'graphql';
-import { getUsers } from '../../operations/users-operations';
-import User from './UserType';
-import UserRoleEnum from './UserRoleEnumType';
+import { getUsers } from '@users/users-operations';
+import User from '@users/UserType';
+import UserRoleEnum from '@users/UserRoleEnumType';
 
 const UserQueries = {
   users: {

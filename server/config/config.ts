@@ -14,5 +14,4 @@ config({
   path: `${DIR}/secrets/${NODE_ENV}-${CUSTOM_ENV}.env`,
 });
 
-
 export const { PORT } = process.env;

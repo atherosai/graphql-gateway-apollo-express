@@ -2,7 +2,7 @@ import {
   GraphQLObjectType,
   GraphQLList,
 } from 'graphql';
-import User from './UserType';
+import User from '@users/UserType';
 
 const CreateUsersPayload = new GraphQLObjectType({
   name: 'CreateUsersPayload',

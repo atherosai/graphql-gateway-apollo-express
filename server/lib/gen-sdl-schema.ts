@@ -1,7 +1,7 @@
 import { printSchema } from 'graphql/utilities';
 import fs from 'fs';
 import path from 'path';
-import schema from '../schema';
+import schema from '@gateway/index';
 
 fs.writeFile(path.join(__dirname, '/../schema/sdl-schema.graphql'), printSchema(schema), (err) => {
   if (err) {

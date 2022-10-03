@@ -4,10 +4,10 @@ import {
   GraphQLNonNull,
 } from 'graphql';
 import isEmail from 'validator/lib/isEmail';
-import { createUser, createUsers } from '../../operations/users-operations';
-import CreateUserInput from './CreateUserInputType';
-import CreateUserPayload from './CreateUserPayload';
-import CreateUsersPayload from './CreateUsersPayload';
+import { createUser, createUsers } from '@users/users-operations';
+import CreateUserInput from '@users/CreateUserInputType';
+import CreateUserPayload from '@users/CreateUserPayload';
+import CreateUsersPayload from '@users/CreateUsersPayload';
 
 const UserMutations = {
   createUser: {

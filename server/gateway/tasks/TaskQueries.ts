@@ -3,8 +3,8 @@ import {
   GraphQLList,
   GraphQLNonNull,
 } from 'graphql';
-import { getTasks } from '../../operations/tasks-operations';
-import Task from './TaskType';
+import { getTasks } from '@tasks/tasks-operations';
+import Task from '@tasks/TaskType';
 
 const TaskQueries = {
   tasks: {

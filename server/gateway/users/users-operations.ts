@@ -1,5 +1,5 @@
-import users from '../db/users-db';
-import genId from '../lib/gen-id';
+import users from '@db/users-db';
+import genId from '@lib/gen-id';
 
 export const createUser = (input) => {
   const newUser = {

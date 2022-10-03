@@ -1,4 +1,3 @@
-
 import { Request, Response, NextFunction } from 'express';
 
 const isSecure = (req: Request) => {
@@ -12,7 +11,9 @@ const isSecure = (req: Request) => {
 };
 
 export const httpsRedirect = (redirectLocalhost = false) => (
-  req: Request, res: Response, next: NextFunction,
+  req: Request,
+  res: Response,
+  next: NextFunction,
 ) => {
   if (req.hostname === 'localhost' && !redirectLocalhost) {
     return next();

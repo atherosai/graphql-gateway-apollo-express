@@ -3,12 +3,10 @@ import {
   GraphQLObjectType,
 } from 'graphql';
 
-
-import UserQueries from './users/UserQueries';
-import UserMutations from './users/UserMutations';
-import TaskMutations from './tasks/TaskMutations';
-import TaskQueries from './tasks/TaskQueries';
-
+import UserQueries from '@users/UserQueries';
+import UserMutations from '@users/UserMutations';
+import TaskMutations from '@tasks/TaskMutations';
+import TaskQueries from '@tasks/TaskQueries';
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({

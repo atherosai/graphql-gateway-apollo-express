@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
 } from 'graphql';
 
-import DateTime from '../custom-scalars/DateTime';
-import TaskStateEnumType from './TaskStateEnumType';
+import DateTime from '@gateway/custom-scalars/DateTime';
+import TaskStateEnumType from '@tasks/TaskStateEnumType';
 
 const TaskType = new GraphQLObjectType({
   name: 'Task',

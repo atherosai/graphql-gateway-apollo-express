@@ -1,9 +1,9 @@
 import {
   GraphQLNonNull,
 } from 'graphql';
-import { createTask } from '../../operations/tasks-operations';
-import CreateTaskInput from './CreateTaskInputType';
-import CreateTaskPayload from './CreateTaskPayloadType';
+import { createTask } from '@tasks/tasks-operations';
+import CreateTaskInput from '@tasks/CreateTaskInputType';
+import CreateTaskPayload from '@tasks/CreateTaskPayloadType';
 
 const TaskMutations = {
   createTask: {

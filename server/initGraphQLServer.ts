@@ -1,11 +1,14 @@
 import { ApolloServer } from 'apollo-server-express';
+import {
+  ApolloServerPluginLandingPageGraphQLPlayground
+} from "apollo-server-core";
 import { GraphQLError } from 'graphql';
 import depthLimit from 'graphql-depth-limit';
 import queryComplexity, {
   simpleEstimator,
 } from 'graphql-query-complexity';
-import schema from './schema';
-import { NODE_ENV, CUSTOM_ENV } from './config/config';
+import schema from '@gateway/index';
+import { NODE_ENV, CUSTOM_ENV } from '@config/config';
 
 const queryComplexityRule = queryComplexity({
   maximumComplexity: 1000,
@@ -18,7 +21,6 @@ const queryComplexityRule = queryComplexity({
     }),
   ],
 });
-
 
 const apolloServer = new ApolloServer({
   schema,
