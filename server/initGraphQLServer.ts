@@ -33,6 +33,7 @@ const apolloServer = new ApolloServer({
 
     return err;
   },
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()]
 });
 
 export default apolloServer;
